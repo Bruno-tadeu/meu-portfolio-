@@ -10,6 +10,9 @@
   --azul-suave: #eef2fc;
   --preto: #1b1d37;
   --cinza-linha: #dde3ef;
+  /* tema: escuro por padrão; o claro é ativado via data-theme="light" */
+  --fundo: var(--preto);
+  --texto: var(--branco);
 
   --fonte: "Space Grotesk", "Segoe UI", sans-serif;
   --fonte-mono: "IBM Plex Mono", "Courier New", monospace;
@@ -21,6 +24,11 @@
   --espaco-4: 48px;
 }
 
+:root[data-theme="light"] {
+  --fundo: var(--branco);
+  --texto: var(--preto);
+}
+
 *,
 *::before,
 *::after {
@@ -29,8 +37,8 @@
 
 body {
   margin: 0;
-  background-color: var(--preto);
-  color: var(--branco);
+  background-color: var(--fundo);
+  color: var(--texto);
   font-family: var(--fonte);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -100,7 +108,7 @@ ol {
 
 .brand {
   font-weight: 600;
-  color: var(--branco);
+  color: var(--texto);
   text-decoration: none;
 }
 
@@ -114,7 +122,7 @@ ol {
 }
 
 .main-nav a {
-  color: var(--branco);
+  color: var(--texto);
   text-decoration: none;
   font-size: 0.95rem;
   padding-bottom: 0.2rem;
@@ -128,6 +136,23 @@ ol {
 .main-nav a[aria-current="page"] {
   color: var(--azul);
   border-bottom-color: var(--azul);
+}
+
+.botao-tema {
+  background-color: transparent;
+  color: var(--texto);
+  border: 1px solid var(--azul);
+  border-radius: 4px;
+  min-height: 44px;
+  padding: var(--espaco-1) var(--espaco-2);
+  font-family: var(--fonte);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.botao-tema:hover {
+  background-color: var(--azul);
+  color: var(--branco);
 }
 
 /* ---------- Conteúdo principal ---------- */
@@ -243,10 +268,10 @@ main {
 .campo input[type="date"],
 .campo select,
 .campo textarea {
-  background-color: var(--preto);
+  background-color: var(--fundo);
   border: 1px solid var(--cinza-linha);
   border-radius: 4px;
-  color: var(--branco);
+  color: var(--texto);
   padding: 0.6rem 0.75rem;
   font-family: var(--fonte);
   font-size: 1rem;
@@ -345,12 +370,12 @@ canvas {
 
 .icon-svg .traco-fino {
   fill: none;
-  stroke: var(--branco);
+  stroke: var(--texto);
   stroke-width: 1;
 }
 
 .icon-svg .ponto {
-  fill: var(--branco);
+  fill: var(--texto);
 }
 
 /* ---------- Rodapé ---------- */
