@@ -36,7 +36,7 @@
     <section aria-labelledby="form-title">
       <h2 id="form-title">Formulário de contato</h2>
 
-      <form class="form-grid" action="#" method="post">
+      <form class="form-grid" action="#" method="post" novalidate>
 
         <div class="campo">
           <label class="campo-obrigatorio" for="nome">Nome completo</label>
@@ -96,6 +96,7 @@
         </div>
 
         <button class="botao" type="submit">Enviar mensagem</button>
+        <p class="feedback" id="feedback-form" role="status" aria-live="polite"></p>
         <p class="nota-form">Este formulário é um exemplo estático — ainda não envia dados a um servidor.</p>
       </form>
     </section>

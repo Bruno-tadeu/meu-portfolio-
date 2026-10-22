@@ -333,6 +333,39 @@ main {
   color: #555555;
 }
 
+.erro-campo {
+  margin: 0;
+  padding-left: var(--espaco-1);
+  border-left: 3px solid var(--azul-claro);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.campo.campo--erro input,
+.campo.campo--erro select,
+.campo.campo--erro textarea {
+  border-color: var(--azul-claro);
+  border-width: 2px;
+}
+
+.feedback {
+  margin: 0;
+  padding: var(--espaco-2);
+  border-left: 4px solid var(--azul);
+  background-color: var(--azul-suave);
+  color: var(--preto);
+  font-weight: 600;
+}
+
+.feedback--erro {
+  border-left-color: var(--azul-claro);
+}
+
+.feedback:empty {
+  display: none;
+}
+
 /* ---------- Multimídia ---------- */
 video,
 iframe {
