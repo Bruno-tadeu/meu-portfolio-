@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato — Bruno Tadeu Marques Martins Filho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Bruno Tadeu Marques Martins Filho</a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="curriculo.html">Currículo</a></li>
+          <li><a href="formulario.html" aria-current="page">Contato</a></li>
+          <li><a href="multimidia.html">Multimídia</a></li>
+          <li><a href="graficos.html">Gráficos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="titulo-pagina">
+      <h1 id="titulo-pagina">Fale comigo</h1>
+      <p>Preencha o formulário abaixo para entrar em contato. Campos marcados com <strong>*</strong> são obrigatórios.</p>
+    </section>
+
+    <section aria-labelledby="form-title">
+      <h2 id="form-title">Formulário de contato</h2>
+
+      <form class="form-grid" action="#" method="post">
+
+        <div class="campo">
+          <label class="campo-obrigatorio" for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required minlength="3">
+        </div>
+
+        <div class="campo">
+          <label class="campo-obrigatorio" for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+        </div>
+
+        <div class="campo">
+          <label for="telefone">Telefone</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(11) 91234-5678" pattern="[0-9()\-\s]{8,15}">
+        </div>
+
+        <div class="campo">
+          <label class="campo-obrigatorio" for="nascimento">Data de nascimento</label>
+          <input type="date" id="nascimento" name="nascimento" required>
+        </div>
+
+        <div class="campo">
+          <label class="campo-obrigatorio" for="assunto">Assunto</label>
+          <select id="assunto" name="assunto" required>
+            <option value="" selected disabled>Selecione um assunto</option>
+            <option value="projeto">Proposta de projeto</option>
+            <option value="duvida">Dúvida</option>
+            <option value="feedback">Feedback</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <fieldset class="grupo-opcoes">
+          <legend>Como prefere ser contatado?</legend>
+          <div class="opcao">
+            <input type="radio" id="contato-email" name="contato-preferido" value="email" checked>
+            <label for="contato-email">E-mail</label>
+          </div>
+          <div class="opcao">
+            <input type="radio" id="contato-telefone" name="contato-preferido" value="telefone">
+            <label for="contato-telefone">Telefone</label>
+          </div>
+          <div class="opcao">
+            <input type="radio" id="contato-whatsapp" name="contato-preferido" value="whatsapp">
+            <label for="contato-whatsapp">WhatsApp</label>
+          </div>
+        </fieldset>
+
+        <div class="campo">
+          <label class="campo-obrigatorio" for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." required minlength="10"></textarea>
+        </div>
+
+        <div class="opcao">
+          <input type="checkbox" id="newsletter" name="newsletter" value="sim">
+          <label for="newsletter">Quero receber novidades por e-mail (exemplo)</label>
+        </div>
+
+        <button class="botao" type="submit">Enviar mensagem</button>
+        <p class="nota-form">Este formulário é um exemplo estático — ainda não envia dados a um servidor.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 Bruno Tadeu Marques Martins Filho</span>
+    </div>
+  </footer>
+
+</body>
+</html>

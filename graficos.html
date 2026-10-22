@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gráficos — Bruno Tadeu Marques Martins Filho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Bruno Tadeu Marques Martins Filho</a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="curriculo.html">Currículo</a></li>
+          <li><a href="formulario.html">Contato</a></li>
+          <li><a href="multimidia.html">Multimídia</a></li>
+          <li><a href="graficos.html" aria-current="page">Gráficos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="titulo-pagina">
+      <h1 id="titulo-pagina">Gráficos</h1>
+      <p>Um desenho gerado via <code>&lt;canvas&gt;</code> e JavaScript, e um ícone em SVG estilizado com CSS.</p>
+    </section>
+
+    <section aria-labelledby="canvas-title">
+      <h2 id="canvas-title">Desenho em canvas</h2>
+      <p>Uma grade de prancheta desenhada dinamicamente via JavaScript.</p>
+      <canvas
+        id="grade-canvas"
+        width="600"
+        height="300"
+        role="img"
+        aria-label="Padrão de grade estilo prancheta técnica, com um compasso central, desenhado via JavaScript">
+      </canvas>
+    </section>
+
+    <section aria-labelledby="svg-title">
+      <h2 id="svg-title">Ícone em SVG</h2>
+      <p>Ícone de compasso desenhado diretamente em SVG e estilizado pelo <code>estilos.css</code>.</p>
+      <svg class="icon-svg" viewBox="0 0 200 200" role="img" aria-labelledby="svgTitle">
+        <title id="svgTitle">Ícone de compasso estilizado</title>
+        <circle class="traco-fino" cx="100" cy="100" r="90"/>
+        <circle class="traco" cx="100" cy="100" r="55"/>
+        <line class="traco" x1="100" y1="20" x2="100" y2="55"/>
+        <line class="traco" x1="100" y1="145" x2="100" y2="180"/>
+        <line class="traco" x1="20" y1="100" x2="55" y2="100"/>
+        <line class="traco" x1="145" y1="100" x2="180" y2="100"/>
+        <circle class="ponto" cx="100" cy="100" r="5"/>
+      </svg>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 Bruno Tadeu Marques Martins Filho</span>
+    </div>
+  </footer>
+
+  <script>
+    (function desenharGradeBlueprint() {
+      var canvas = document.getElementById("grade-canvas");
+      if (!canvas || !canvas.getContext) return;
+
+      var ctx = canvas.getContext("2d");
+      var largura = canvas.width;
+      var altura = canvas.height;
+      var espaco = 20;
+
+      ctx.fillStyle = "#05070a";
+      ctx.fillRect(0, 0, largura, altura);
+
+      ctx.strokeStyle = "#0b1f3d";
+      ctx.lineWidth = 1;
+      for (var x = 0; x <= largura; x += espaco) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, altura);
+        ctx.stroke();
+      }
+      for (var y = 0; y <= altura; y += espaco) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(largura, y);
+        ctx.stroke();
+      }
+
+      var centroX = largura / 2;
+      var centroY = altura / 2;
+
+      ctx.strokeStyle = "#3e7bfa";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(centroX, centroY, 70, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(centroX, centroY, 30, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.strokeStyle = "#ffffff";
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(centroX - 90, centroY);
+      ctx.lineTo(centroX + 90, centroY);
+      ctx.moveTo(centroX, centroY - 90);
+      ctx.lineTo(centroX, centroY + 90);
+      ctx.stroke();
+
+      ctx.fillStyle = "#ffffff";
+      ctx.beginPath();
+      ctx.arc(centroX, centroY, 4, 0, Math.PI * 2);
+      ctx.fill();
+    })();
+  </script>
+
+</body>
+</html>

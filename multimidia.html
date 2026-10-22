@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multimídia — Bruno Tadeu Marques Martins Filho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Bruno Tadeu Marques Martins Filho</a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="curriculo.html">Currículo</a></li>
+          <li><a href="formulario.html">Contato</a></li>
+          <li><a href="multimidia.html" aria-current="page">Multimídia</a></li>
+          <li><a href="graficos.html">Gráficos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="titulo-pagina">
+      <h1 id="titulo-pagina">Multimídia</h1>
+    </section>
+
+    <section aria-labelledby="video-title">
+      <h2 id="video-title">Vídeo</h2>
+      <p>
+        Vídeo de indicação de livros para aprender HTML5 e CSS3.
+      </p>
+      <video controls width="640" height="360">
+        <source src="img_mp3_mp4/video.mp4" type="video/mp4">
+        Seu navegador não é compatível com a reprodução de vídeo incorporado.
+      </video>
+    </section>
+
+    <section aria-labelledby="audio-title">
+      <h2 id="audio-title">Áudio</h2>
+      <audio controls>
+        <source src="img_mp3_mp4/ssstik.io_1787192479750.mp3" type="audio/mpeg">
+
+        Seu navegador não consegue reproduzir este áudio.
+      </audio>
+    </section>
+
+    <section aria-labelledby="mapa-title">
+      <h2 id="mapa-title">Localização</h2>
+      <p>Mapa incorporado via <code>&lt;iframe&gt;</code> Centro Universitário Braz Cubas.</p>
+      <iframe
+        title="Mapa de localização"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.5031991839514!2d-46.1874307!3d-23.5143973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cdd812455f1f7d%3A0x39c93d58c0fd3654!2sCentro%20Universit%C3%A1rio%20Braz%20Cubas!5e0!3m2!1spt-BR!2sbr!4v1789423151032!5m2!1spt-BR!2sbr"
+        width="600" height="450" allowfullscreen loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>&copy; 2026 Bruno Tadeu Marques Martins Filho</span>
+    </div>
+  </footer>
+
+</body>
+</html>

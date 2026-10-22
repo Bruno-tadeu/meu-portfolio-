@@ -1,0 +1,22 @@
+# Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Arquivos do sistema e do editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Binários, executáveis e pacotes compactados
+*.exe
+*.dll
+*.bin
+*.msi
+*.iso
+*.zip
+*.rar
+*.7z

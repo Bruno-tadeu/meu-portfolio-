@@ -1,0 +1,415 @@
+/* =========================================================
+   ESTILOS.CSS — Portfólio pessoal
+   Paleta: azul, branco e preto, apenas.
+   ========================================================= */
+
+:root {
+  --branco: #fff7f7;
+  --azul: #1c4fd6;
+  --azul-claro: #4f7fe8;
+  --azul-suave: #eef2fc;
+  --preto: #1b1d37;
+  --cinza-linha: #dde3ef;
+
+  --fonte: "Space Grotesk", "Segoe UI", sans-serif;
+  --fonte-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --largura-conteudo: 800px;
+  --espaco-1: 8px;
+  --espaco-2: 16px;
+  --espaco-3: 28px;
+  --espaco-4: 48px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--preto);
+  color: var(--branco);
+  font-family: var(--fonte);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--azul);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--azul);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 var(--espaco-2);
+}
+
+h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  color: var(--azul);
+}
+
+p {
+  margin: 0 0 var(--espaco-2);
+  max-width: 68ch;
+}
+
+ul,
+ol {
+  padding-left: 1.2rem;
+}
+
+/* ---------- Cabeçalho / navegação ---------- */
+.site-header {
+  border-bottom: 1px solid var(--cinza-linha);
+}
+
+.header-inner {
+  width: min(100% - 2.5rem, var(--largura-conteudo));
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  padding: var(--espaco-2) 0;
+}
+
+.brand {
+  font-weight: 600;
+  color: var(--branco);
+  text-decoration: none;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-3);
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover {
+  color: var(--azul);
+}
+
+.main-nav a[aria-current="page"] {
+  color: var(--azul);
+  border-bottom-color: var(--azul);
+}
+
+/* ---------- Conteúdo principal ---------- */
+main {
+  width: min(100% - 2.5rem, var(--largura-conteudo));
+  margin-inline: auto;
+  padding: var(--espaco-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-4);
+}
+
+/* ---------- Hero (página inicial) ---------- */
+.hero {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  gap: var(--espaco-3);
+}
+
+.hero > div {
+  flex: 1 1 320px;
+}
+
+.hero-lead {
+  color: var(--azul);
+  font-family: var(--fonte-mono);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.avatar {
+  width: 120px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ---------- Listas simples ---------- */
+.lista-simples {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+}
+
+.lista-simples li {
+  flex: 1 1 220px;
+  border-left: 3px solid var(--azul);
+  padding-left: var(--espaco-2);
+}
+
+.etiqueta {
+  display: block;
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  color: var(--azul);
+  margin-bottom: 0.15rem;
+}
+
+/* ---------- Tabela (currículo) ---------- */
+.tabela-experiencia {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.tabela-experiencia caption {
+  text-align: left;
+  color: var(--azul);
+  font-size: 0.85rem;
+  margin-bottom: var(--espaco-2);
+}
+
+.tabela-experiencia th,
+.tabela-experiencia td {
+  border-bottom: 1px solid var(--cinza-linha);
+  padding: 0.6rem 0.5rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.tabela-experiencia thead th {
+  color: var(--azul);
+  font-weight: 600;
+  border-bottom: 2px solid var(--azul);
+}
+
+/* ---------- Formulário ---------- */
+.form-grid {
+  display: grid;
+  gap: var(--espaco-3);
+  max-width: 480px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"],
+.campo input[type="date"],
+.campo select,
+.campo textarea {
+  background-color: var(--preto);
+  border: 1px solid var(--cinza-linha);
+  border-radius: 4px;
+  color: var(--branco);
+  padding: 0.6rem 0.75rem;
+  font-family: var(--fonte);
+  font-size: 1rem;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: var(--azul);
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.grupo-opcoes {
+  border: 1px solid var(--cinza-linha);
+  border-radius: 4px;
+  padding: var(--espaco-2) var(--espaco-3);
+}
+
+.grupo-opcoes legend {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0 0.4rem;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.35rem 0;
+}
+
+.campo-obrigatorio::after {
+  content: " *";
+  color: var(--azul);
+}
+
+.botao {
+  justify-self: start;
+  background-color: var(--azul);
+  color: var(--preto);
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background-color: var(--azul-claro);
+}
+
+.nota-form {
+  font-size: 0.85rem;
+  color: #555555;
+}
+
+/* ---------- Multimídia ---------- */
+video,
+iframe {
+  width: 100%;
+  max-width: 640px;
+  border: 1px solid var(--cinza-linha);
+  border-radius: 4px;
+}
+
+video {
+  height: auto;
+}
+
+iframe {
+  height: 360px;
+}
+
+/* ---------- Canvas e SVG ---------- */
+canvas {
+  border: 1px solid var(--cinza-linha);
+  border-radius: 4px;
+  max-width: 100%;
+}
+
+.icon-svg {
+  width: 140px;
+  height: 140px;
+}
+
+.icon-svg .traco {
+  fill: none;
+  stroke: var(--azul);
+  stroke-width: 3;
+}
+
+.icon-svg .traco-fino {
+  fill: none;
+  stroke: var(--branco);
+  stroke-width: 1;
+}
+
+.icon-svg .ponto {
+  fill: var(--branco);
+}
+
+/* ---------- Rodapé ---------- */
+.site-footer {
+  border-top: 1px solid var(--cinza-linha);
+  padding: var(--espaco-3) 0 var(--espaco-4);
+}
+
+.footer-inner {
+  width: min(100% - 2.5rem, var(--largura-conteudo));
+  margin-inline: auto;
+  font-size: 0.85rem;
+  color: #555555;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* ---------- Grid (página de currículo) ---------- */
+.grid-curriculo {
+  display: grid;
+  gap: var(--espaco-4);
+  grid-template-areas:
+    "formacao"
+    "experiencia"
+    "habilidades";
+}
+
+.grid-item--formacao {
+  grid-area: formacao;
+}
+
+.grid-item--experiencia {
+  grid-area: experiencia;
+}
+
+.grid-item--habilidades {
+  grid-area: habilidades;
+}
+
+/* ---------- Responsivo (mobile-first) ---------- */
+@media (min-width: 768px) {
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .grid-curriculo {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "formacao habilidades"
+      "experiencia experiencia";
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
