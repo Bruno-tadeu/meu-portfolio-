@@ -150,6 +150,27 @@
       }
 
       var nome = form.elements["nome"].value.trim();
+
+      var contato = {
+        nome: nome,
+        email: form.elements["email"].value.trim(),
+        telefone: form.elements["telefone"].value.trim(),
+        nascimento: form.elements["nascimento"].value,
+        assunto: form.elements["assunto"].value,
+        contatoPreferido: form.elements["contato-preferido"].value,
+        mensagem: form.elements["mensagem"].value.trim(),
+        newsletter: form.elements["newsletter"].checked,
+        enviadoEm: new Date().toISOString()
+      };
+
+      try {
+        var lista = JSON.parse(localStorage.getItem("portfolio-contatos")) || [];
+        lista.push(contato);
+        localStorage.setItem("portfolio-contatos", JSON.stringify(lista));
+      } catch (erro) {
+        /* localStorage indisponível: os dados não serão salvos */
+      }
+
       form.reset();
       mostrarFeedback(
         painel,
